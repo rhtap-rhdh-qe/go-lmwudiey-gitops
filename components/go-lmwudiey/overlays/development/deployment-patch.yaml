@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: go-lmwudiey
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/rhtap-task-runner:latest
-        name: container-image  
+        - image: quay.io/rhtap_qe/go-lmwudiey:c5e650c8b53acb15383b718277ef4be1b173bb68@sha256:25aa9a82d963491685b88664fe3c94da30df96994bfe3212da1237633ce72d13
+          name: container-image
